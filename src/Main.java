@@ -6,7 +6,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Employee nine = new Employee("Segei", "Seev", "Servich", 2, 111000);
+        Employee nine = new Employee("Seei", "Seev", "Servich", 2, 111000);
         Employee eight = new Employee("Sei", "Sev", "Servich", 2, 11000);
         Employee zero = new Employee("Seri", "Sgeev", "Sergevich", 2, 1123000);
         Employee seven = new Employee("Sergei", "Sergeev", "Sergeevich", 1, 1000);

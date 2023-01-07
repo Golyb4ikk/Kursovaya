@@ -50,7 +50,7 @@ public class Employee {
     }
 
     public String toString() {
-        return "Имя " + this.name + " Фамилия " + this.surname + " Отчество " + this.otchestvo + " Отдел " + this.otdel + " Зарплата " + this.salary + " id " + this.id;
+        return "Имя " + this.name + " Фамилия " + this.surname + " Отчествo " + this.otchestvo + " Отдел " + this.otdel + " Зарплата " + this.salary + " id " + this.id;
     }
 
 }
