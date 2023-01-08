@@ -41,9 +41,6 @@ public class Main {
         getFIOemp(employee);
 
 
-
-
-
     }
 
     public static void getAllEmployee(Employee[] employee) {
@@ -67,57 +64,60 @@ public class Main {
         System.out.println("Сумма затрат на зарплаты в месяц= " + sum);
         return sum;
     }
+
     public static double getMinSalary(Employee[] employee) {
-        double minSalary =100000000;
-        String RabotnicSMinZp="";
+        double proverkaMinSalary = employee[0].getSalary();
+        String RabotnicSMinZp = "";
+        //Naxodim min zp sredi rabotnikov
         for (int i = 0; i < employee.length; i++) {
-            if(minSalary>employee[i].getSalary()) {
-                minSalary = employee[i].getSalary();
-                RabotnicSMinZp=employee[i].getName();
-            }
-            else if(minSalary==employee[i].getSalary()){
-                System.out.println("Один из работников с минимальной зп "+employee[i].getName());
-
+            if (proverkaMinSalary > employee[i].getSalary()) {
+                proverkaMinSalary = employee[i].getSalary();
+                RabotnicSMinZp = employee[i].getName();
             }
         }
-        System.out.println("Один из работников с минимальной зп "+RabotnicSMinZp);
-        return minSalary;
+        //proveriem na nalichie esche sotrudnikov s min zp
+        double minZpRabotnika = proverkaMinSalary;
+        for (int j = 0; j < employee.length; j++) {
+            if (minZpRabotnika == employee[j].getSalary()) {
+                System.out.println("У работника с именем " + employee[j].getName() + " минимальная зп = " + minZpRabotnika);
+            }
+        }
+        return proverkaMinSalary;
     }
+
     public static double getMaxSalary(Employee[] employee) {
-        double maxSalary =0;
-        String RabotnicSMaxZp="";
+        double proverkaMaxSalary = employee[0].getSalary();
+        String RabotnicSMaxZp = "";
+        //Naxodim max zp sredi rabotnikov
         for (int i = 0; i < employee.length; i++) {
-            if(maxSalary<employee[i].getSalary()) {
-                maxSalary = employee[i].getSalary();
-                RabotnicSMaxZp=employee[i].getName();
-            }
-            else if(maxSalary==employee[i].getSalary()){
-                System.out.println("Один из работников с максимальной зп "+employee[i].getName());
-
+            if (proverkaMaxSalary < employee[i].getSalary()) {
+                proverkaMaxSalary = employee[i].getSalary();
+                RabotnicSMaxZp = employee[i].getName();
             }
         }
-        System.out.println("Один из работников с максимальной зп "+RabotnicSMaxZp);
-        return maxSalary;
+        //proveriem na nalichie esche sotrudnikov s max zp
+        double maxZpRabotnika = proverkaMaxSalary;
+        for (int j = 0; j < employee.length; j++) {
+            if (maxZpRabotnika == employee[j].getSalary()) {
+                System.out.println("У работника с именем " + employee[j].getName() + " максимальная зп = " + maxZpRabotnika);
+            }
+        }
+        return proverkaMaxSalary;
     }
+
     public static double getSredniySalary(Employee[] employee) {
         double summ = 0;
         for (int i = 0; i < employee.length; i++) {
-            summ = (summ + employee[i].getSalary())/employee.length;
+            summ = (summ + employee[i].getSalary()) / employee.length;
         }
         System.out.println("Средняя зп сотрудников = " + summ);
         return summ;
     }
+
     public static void getFIOemp(Employee[] employee) {
-        System.out.println(employee[0].getName()+" "+employee[0].getSurname()+" "+employee[0].getOthestvo());
-        System.out.println(employee[1].getName()+" "+employee[1].getSurname()+" "+employee[1].getOthestvo());
-        System.out.println(employee[2].getName()+" "+employee[2].getSurname()+" "+employee[2].getOthestvo());
-        System.out.println(employee[3].getName()+" "+employee[3].getSurname()+" "+employee[3].getOthestvo());
-        System.out.println(employee[4].getName()+" "+employee[4].getSurname()+" "+employee[4].getOthestvo());
-        System.out.println(employee[5].getName()+" "+employee[5].getSurname()+" "+employee[5].getOthestvo());
-        System.out.println(employee[6].getName()+" "+employee[6].getSurname()+" "+employee[6].getOthestvo());
-        System.out.println(employee[7].getName()+" "+employee[7].getSurname()+" "+employee[7].getOthestvo());
-        System.out.println(employee[8].getName()+" "+employee[8].getSurname()+" "+employee[8].getOthestvo());
-        System.out.println(employee[9].getName()+" "+employee[9].getSurname()+" "+employee[9].getOthestvo());
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println(employee[i].getName() + " " + employee[i].getSurname() + " " + employee[i].getOthestvo());
+        }
     }
 
 }
